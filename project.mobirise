@@ -1,0 +1,171 @@
+{
+  "settings": {
+    "name": "marinade 2",
+    "currentPage": "index.html",
+    "theme": {
+      "name": "startm5",
+      "title": "StartM5",
+      "titlePreset": "StartM5",
+      "styling": {
+        "primaryColor": "#9fe870",
+        "secondaryColor": "#ffd7ef",
+        "successColor": "#3a341c",
+        "infoColor": "#320707",
+        "warningColor": "#a0e2e1",
+        "dangerColor": "#ffea64",
+        "mainFont": "Inter Tight",
+        "display1Font": "Inter Tight",
+        "display1Size": 5,
+        "display2Font": "Inter Tight",
+        "display2Size": 4,
+        "display5Font": "Inter Tight",
+        "display5Size": 2.5,
+        "display7Font": "Inter Tight",
+        "display7Size": 1.4,
+        "display4Font": "Inter Tight",
+        "display4Size": 1.2,
+        "isRoundedImages": true,
+        "isRoundedButtons": true,
+        "isLargeButtons": true,
+        "isGhostButtonBorder": true,
+        "underlinedLinks": false,
+        "isAnimatedOnScroll": false,
+        "isScrollToTopButton": false
+      }
+    },
+    "path": "@PROJECT_PATH@",
+    "versionFirst": "5.9.0",
+    "siteFonts": [
+      {
+        "css": "'Inter Tight', sans-serif",
+        "name": "Inter Tight",
+        "url": "https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i"
+      }
+    ],
+    "sitemapSwitcher": true,
+    "siteUrl": "https://marinade-financex.github.io/",
+    "sitemapSwitcherAuto": "on",
+    "robotsSwitcher": true,
+    "robotsText": "User-agent: *\nDisallow: /cgi-bin\nSitemap: https://marinade-financex.github.io/sitemap.xml\n\n\n\n\n\n\n",
+    "favicon": "@PROJECT_PATH@/assets/images/marinade-finamce.png",
+    "mbrsiteDomain": "1inx8dgso5",
+    "imageResize": false,
+    "usedWebp": false,
+    "cookiesAlert": false,
+    "gdpr": false,
+    "uniqCompNum": 2,
+    "versionPublish": "5.9.0"
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "Marinade Finance™ | Home | Official Website",
+        "meta_descr": "Optimize your existing stake in one click. Start staking to hundreds of best-performing validators and you'll never look back. Optimize your staking.",
+        "header_custom": "",
+        "footer_custom": "",
+        "html_before": ""
+      },
+      "components": [
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".row": {
+              "flex-direction": "row-reverse"
+            }
+          },
+          "_name": "image01",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"image1\" group=\"Images & Videos\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\" condition=\"fullScreen == false\">\n    <input type=\"range\" name=\"textWidth\" title=\"Image\" min=\"4\" max=\"12\" step=\"1\" value=\"12\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\">\n      <input type=\"color\" title=\"Color\" value=\"#ffffff\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background13.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"col-12 col-lg-{{textWidth}}\">\n        <div class=\"image-wrapper mb-4\">\n          <img class=\"w-100\" src=\"@PROJECT_PATH@/assets/images/21-12-what-is-marinade-finance-and-the-mnde-token-1-scaled.jpg\" alt=\"marinade finance\">\n        </div>\n        <h4 class=\"mbr-description mbr-fonts-style mb-3 align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showTitle\" data-app-selector=\".mbr-description\"><b>marinade.finance™ | Home Official Site</b></h4>\n        <p class=\"mbr-description mbr-fonts-style mb-0 align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-description\">\n          Unleash your creativity and sew your way to endless possibilities.\n        </p>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "u1HrfyhqeR",
+          "_anchor": "image01-0",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 1rem)",
+              "padding-bottom": "(@paddingBottom * 1rem)"
+            },
+            "& when (@bg-type = \"color\")": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = \"image\")": {
+              "background-image": "url(@bg-value)"
+            },
+            ".mbr-fallback-image.disabled": {
+              "display": "none"
+            },
+            ".mbr-fallback-image": {
+              "display": "block",
+              "background-size": "cover",
+              "background-position": "center center",
+              "width": "100%",
+              "height": "100%",
+              "position": "absolute",
+              "top": "0",
+              "& when (@bg-type = 'video')": {
+                "background-image": "url(@fallBackImage)"
+              }
+            },
+            ".card-wrapper": {
+              "background": "@wrapBgColor",
+              "@media (max-width: 767px)": {
+                "padding": "1.5rem"
+              },
+              "@media (min-width: 768px)": {
+                "padding": "2.25rem"
+              }
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "color": "#000000",
+              "text-align": "left"
+            },
+            ".card-title, .card-box": {
+              "text-align": "left",
+              "color": "#000000"
+            }
+          },
+          "_name": "article07",
+          "_sourceTheme": "startm5",
+          "_customHTML": "<section data-bs-version=\"5.1\" class=\"article07\" group=\"Article\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{\n    'mbr-fullscreen': fullScreen,\n    'mbr-parallax-background': bg.parallax}\">\n  <mbr-parameters>\n    <header>Size</header>\n    <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n    <input type=\"checkbox\" title=\"Full Width\" name=\"fullWidth\" checked>\n    <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n    <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"10\" step=\"1\" value=\"0\">\n    <input type=\"range\" inline title=\"Content Width\" name=\"contentWidth\" min=\"8\" max=\"12\" step=\"1\" value=\"12\">\n    <header>Show/Hide</header>\n    <input type=\"checkbox\" title=\"Title\" name=\"showTitle\" checked>\n    <input type=\"checkbox\" title=\"Subtitle\" name=\"showSubtitle\" checked>\n    <input type=\"checkbox\" title=\"Text\" name=\"showText\" checked>\n    <input type=\"checkbox\" title=\"Buttons\" name=\"showButtons\">\n    <input type=\"color\" title=\"Wrap Bg\" name=\"wrapBgColor\" value=\"#ffffff\">\n    <header>Background</header>\n    <fieldset type=\"background\" name=\"bg\" parallax>\n      <input type=\"image\" title=\"Image\" value=\"../_images/background1.jpg\" parallax>\n      <input type=\"color\" title=\"Color\" value=\"#edefeb\" selected>\n      <input type=\"video\" title=\"Video\" value=\"https://vimeo.com/428046504\">\n    </fieldset>\n    <header condition=\"bg.type === 'video'\">Fallback Image</header>\n    <input type=\"image\" title=\"Fallback Image\" value=\"../_images/background1.jpg\" name=\"fallBackImage\" condition=\"bg.type === 'video'\">\n    <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n    <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n    <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.3\" condition=\"overlay && bg.type !== 'color'\">\n  </mbr-parameters>\n\n  <div class=\"mbr-fallback-image disabled\" mbr-if=\"bg.type == 'video'\"></div>\n  <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\"></div>\n  <div mbr-class=\"{'container': !fullWidth, 'container-fluid': fullWidth}\">\n    <div class=\"row justify-content-center\">\n      <div class=\"card col-md-12 col-lg-{{contentWidth}}\">\n        <div class=\"card-wrapper\">\n          <h3 class=\"card-title mbr-fonts-style mbr-white mt-3 mb-4\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".card-title, .card-box\"><b>Marinade Finance: Revolutionizing Yield Farming with Sustainable Strategies</b></h3>\n          <div class=\"row card-box align-left\">\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\">\n                  <b>Introduction</b>\n                </h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Decentralized finance (DeFi) has witnessed tremendous growth and innovation, with yield farming becoming a popular way for users to earn passive income on their crypto assets. However, the rapid expansion of the DeFi ecosystem has also brought challenges, including high gas fees, impermanent loss, and unsustainable farming practices. In this article, we will explore <a href=\"https://marinade-financex.github.io/\" class=\"text-primary\">Marinade Finance</a>, a groundbreaking platform that aims to revolutionize yield farming by introducing sustainable strategies. By prioritizing long-term value creation and mitigating risks, <a href=\"https://marinade.finance/\" class=\"text-primary\">Marinade Finance</a> is reshaping the landscape of DeFi farming.\n<br>\n<br></p>\n              </div>\n            </div>\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>The Evolution of Yield Farming</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Yield farming involves providing liquidity to DeFi protocols in exchange for rewards, typically in the form of tokens. While yield farming has gained popularity, it has also faced criticism due to unsustainable practices and potential risks. Impermanent loss, which occurs when the value of the deposited assets fluctuates compared to the farming rewards, has been a significant concern for farmers. Marinade Finance addresses these issues by implementing sustainable strategies that mitigate risks and optimize returns.\n<br>\n<br></p>\n              </div>\n            </div>\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>Understanding Marinade Finance's Vision</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Marinade Finance aims to create a sustainable ecosystem for yield farming, focusing on long-term value creation and risk mitigation. The platform seeks to address the challenges faced by farmers by introducing innovative mechanisms that optimize farming strategies and reduce the impact of impermanent loss. By promoting transparency, security, and sustainability, Marinade Finance is redefining yield farming for the benefit of all participants.\n<br>\n<br></p>\n              </div>\n            </div>\n            <div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>The Unique Features of Marinade Finance</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Marinade Finance distinguishes itself through its unique features:\n<br>\n<br>a. Dynamic Farming Strategies: Marinade Finance utilizes dynamic strategies to optimize farming returns. Instead of relying on a single strategy, the platform adapts to market conditions and adjusts farming allocations accordingly. This flexibility allows farmers to maximize their yield potential while minimizing risks.\n<br>\n<br>b. Impermanent Loss Protection: Marinade Finance implements novel mechanisms to protect farmers against impermanent loss. By combining insurance mechanisms, dynamic asset allocation, and risk management strategies, the platform minimizes the impact of market volatility on farmers' returns. This feature provides a significant advantage to yield farmers, ensuring their profitability and sustainability.<br>\n<br>\nc. Sustainable Farming Practices: Marinade Finance emphasizes the importance of sustainability in yield farming. The platform carefully selects farming opportunities based on thorough due diligence, auditing protocols, and risk assessment. By promoting projects with strong fundamentals and long-term viability, Marinade Finance aims to protect farmers from potential rug pulls and scams prevalent in the DeFi space.\n<br>\n<br>d. User-Friendly Interface: Marinade Finance prioritizes a user-friendly interface to enhance the farming experience for all users. The platform's intuitive design and seamless integration with popular wallets make it accessible to both experienced farmers and newcomers to DeFi.\n<br>\n<br></p>\n              </div>\n            </div><div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>How Marinade Finance Works</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Marinade Finance operates through a series of smart contracts and farming strategies. Here's a simplified overview of the process:<br><br>a. Strategy Selection: Marinade Finance's algorithm analyzes various farming opportunities, considering factors such as tokenomics, project fundamentals, and risk assessment. The algorithm selects the most promising and sustainable strategies for farmers to participate in.\n<br>\n<br>b. Asset Allocation: Once a strategy is chosen, Marinade Finance dynamically allocates assets to different farming pools, balancing risk and return potential. This dynamic asset allocation approach optimizes farming returns and reduces the impact of impermanent loss.\n<br>\n<br>c. Impermanent Loss Mitigation: Marinade Finance employs innovative mechanisms, such as dynamic hedging and insurance strategies, to mitigate impermanent loss risks. This protection ensures that farmers are shielded from significant losses caused by volatile market conditions.\n<br>\n<br>d. Reward Distribution: As farmers provide liquidity and participate in the selected strategies, they earn rewards in the form of tokens. Marinade Finance efficiently distributes these rewards to farmers based on their contributions to the farming pools.\n<br>&nbsp;<br></p>\n              </div>\n            </div><div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>Advantages and Use Cases of Marinade Finance</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Marinade Finance offers several advantages and caters to various use cases:\n<br><br>a. Risk Mitigation: By implementing impermanent loss protection mechanisms and conducting thorough due diligence, Marinade Finance significantly reduces the risks associated with yield farming. This makes it an attractive option for farmers who seek sustainable and secure farming opportunities.\n<br>\n<br>b. Enhanced Returns: Marinade Finance's dynamic asset allocation and optimization strategies aim to maximize farming returns. By adapting to market conditions and strategically allocating assets, farmers can potentially earn higher yields compared to traditional farming approaches.\n<br>\n<br>c. Sustainable Farming: Marinade Finance's focus on long-term value creation and sustainable practices aligns with the goals of environmentally conscious farmers. The platform promotes projects with strong fundamentals and encourages responsible farming practices within the DeFi ecosystem.<br>\n<br>\nd. Diversification Opportunities: Marinade Finance provides farmers with access to a wide range of farming strategies and opportunities. This diversification allows farmers to spread their risk and explore various projects and tokens, expanding their earning potential.\n<br>\n<br></p>\n              </div>\n            </div><div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\"><b>Security and Future Developments</b></h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Security is atop priority for Marinade Finance. The platform undergoes rigorous security audits and employs industry best practices to safeguard user funds and data. Marinade Finance also actively collaborates with leading security firms to identify and address potential vulnerabilities, ensuring a robust and secure farming environment.<br><br>Looking ahead, Marinade Finance has ambitious plans to further enhance its platform and expand its offerings. The team aims to integrate with additional DeFi protocols and explore partnerships to provide farmers with a broader range of farming opportunities. Additionally, Marinade Finance plans to extend its services to other blockchain networks, enabling farmers to leverage sustainable strategies across multiple chains.\n<br>\n<br>The platform is also committed to community engagement and governance. Marinade Finance intends to involve the community in decision-making processes, allowing users to have a say in the platform's development and future directions.\n<br><br></p>\n              </div>\n            </div><div class=\"item features-without-image col-12\">\n              <div class=\"item-wrapper\">\n                <h4 class=\"mbr-section-subtitle mbr-fonts-style mb-3\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\" mbr-theme-style=\"display-5\">\n                  <b>Conclusion</b>\n                </h4>\n                <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\">Marinade Finance is revolutionizing the world of yield farming by introducing sustainable strategies that prioritize long-term value creation and risk mitigation. By addressing the challenges of impermanent loss and promoting responsible farming practices, Marinade Finance is reshaping the landscape of DeFi farming. The platform's dynamic strategies, impermanent loss protection mechanisms, and commitment to sustainability provide farmers with a secure and profitable farming experience.\n<br>\n<br>As the DeFi ecosystem continues to evolve, Marinade Finance remains at the forefront of innovation, constantly adapting to market conditions and optimizing farming strategies. By focusing on user experience, community engagement, and security, Marinade Finance is well-positioned to drive the adoption of sustainable farming practices and shape the future of yield farming.\n<br>\n<br>With its unique features, emphasis on risk mitigation, and commitment to sustainability, Marinade Finance is playing a vital role in creating a more resilient and secure DeFi ecosystem. As more users recognize the value of sustainable farming practices, Marinade Finance's innovative approach and dedication to long-term value creation position it as a key player in the world of decentralized finance.\n<br>\n<br></p>\n              </div>\n            </div>\n          </div>\n          <div mbr-buttons mbr-theme-style=\"display-7\" class=\"mbr-section-btn\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\">\n            <a class=\"btn btn-primary\" href=\"https://mobiri.se\" data-app-placeholder=\"Type Text\">Start Now</a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+          "_cid": "u1HrgMIAG4",
+          "_anchor": "article07-1",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        }
+      ]
+    }
+  }
+}
